@@ -6,13 +6,19 @@ for (let i = 1; i <= 100; i++) {
     // se il numero è multiplo di 3 o 5 aggiungo ad una stringa Fizz, Buzz o entrambi
     if (i % 3 == 0) {printIfMultiple += "Fizz";}
     if (i % 5 == 0) {printIfMultiple += "Buzz";}
-    // se il numero non era un multiplo di 3 o 5 stampo il numero,
-    // altrimenti stampo la stringa
+    // se multiplo stampo la stringa, altrimenti stampo il numero, 
+    // il tutto in dei div che vengono aggiunti alla pagina
     if (printIfMultiple.length == false) {
-        document.getElementById("numbers").innerHTML += `<div>${i}</div>`
+        document.getElementById("content").innerHTML += `<div class="col py-4 border border-dark">${i}</div>`;
     } 
     else {
-        document.getElementById("numbers").innerHTML += `<div>${printIfMultiple}</div>`
+        if (printIfMultiple == "Fizz") {
+            document.getElementById("content").innerHTML += `<div class="col bg-warning py-4 border border-dark">${printIfMultiple}</div>`;
+        } else if (printIfMultiple == "Buzz") {
+            document.getElementById("content").innerHTML += `<div class="col bg-danger py-4 border border-dark">${printIfMultiple}</div>`;
+        } else {
+            document.getElementById("content").innerHTML += `<div class="col bg-success py-4 border border-dark">${printIfMultiple}</div>`;
+        }
     }
 }
 
