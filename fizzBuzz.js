@@ -9,10 +9,10 @@ for (let i = 1; i <= 100; i++) {
     // se il numero non era un multiplo di 3 o 5 stampo il numero,
     // altrimenti stampo la stringa
     if (printIfMultiple.length == false) {
-        console.log(i);
+        document.getElementById("numbers").innerHTML += `<div>${i}</div>`
     } 
     else {
-        console.log(printIfMultiple);
+        document.getElementById("numbers").innerHTML += `<div>${printIfMultiple}</div>`
     }
 }
 
